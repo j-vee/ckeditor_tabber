@@ -25,7 +25,6 @@ class CKEditorTabber extends CKEditorPluginBase {
    */
   public function getConfig(Editor $editor) {
     $config = array();
-    $settings = $editor->getSettings();
     return $config;
   }
 

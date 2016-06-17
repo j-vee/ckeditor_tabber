@@ -7,8 +7,6 @@
     //lang: 'en,en-au,en-ca,en-gb',
     icons: 'tabber',
     init: function (editor) {
-      //debugger
-
       // Add single button
       editor.ui.addButton('Tabber', {
         command: 'addTabCmd',
