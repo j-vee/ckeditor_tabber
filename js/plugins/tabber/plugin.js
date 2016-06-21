@@ -34,7 +34,7 @@
           command.setState(CKEDITOR.TRISTATE_OFF);
       });
 
-      var allowedContent = 'dl dd dt (ckeditor-tabber)';
+      var allowedContent = 'dl dd dt(!ckeditor-tabber)';
 
       // Command to insert initial structure
       editor.addCommand('addTabCmd', {
@@ -97,8 +97,12 @@
           }
           else {
             var a = element.getAscendant('dd', true);
-            a.getPrevious().remove();
-            a.remove();
+            if(a) {
+              a.getPrevious().remove();
+              a.remove();
+            } else {
+              element.remove();
+            }
           }
         }
       });
@@ -126,7 +130,8 @@
         });
 
         editor.contextMenu.addListener(function (element) {
-          if (element.getAscendant('dl', true)) {
+          var parentEl = element.getAscendant('dl', true);
+          if (parentEl && parentEl.hasClass('ckeditor-tabber')) {
             return {
               tabBeforeItem: CKEDITOR.TRISTATE_OFF,
               tabAfterItem: CKEDITOR.TRISTATE_OFF,
