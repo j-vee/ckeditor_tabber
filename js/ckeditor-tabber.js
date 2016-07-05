@@ -63,6 +63,7 @@
           // don't add hash to url
           e.preventDefault();
         });
+
       }
     }
   }

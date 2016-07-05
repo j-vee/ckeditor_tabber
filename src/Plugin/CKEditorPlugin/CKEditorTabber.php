@@ -40,18 +40,18 @@ class CKEditorTabber extends CKEditorPluginBase {
    * {@inheritdoc}
    */
   public function getFile() {
-	return drupal_get_path('module', 'ckeditor_tabber') . '/js/plugins/tabber/plugin.js';
+    return drupal_get_path('module', 'ckeditor_tabber') . '/js/plugins/tabber/plugin.js';
   }
 
   /**
    * {@inheritdoc}
    */
   public function getButtons() {
-	$path = drupal_get_path('module', 'ckeditor_tabber') . '/js/plugins/tabber/icons';
+    $path = drupal_get_path('module', 'ckeditor_tabber') . '/js/plugins/tabber/icons';
     return array(
       'Tabber' => array(
         'label' => t('Add Tab'),
-		'image' => $path . '/tabber.png',
+        'image' => $path . '/tabber.png',
       ),
     );
   }
